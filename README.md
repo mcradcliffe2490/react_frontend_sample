@@ -7,8 +7,6 @@
 `yarn start`
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-[Help with Forking/Cloning](https://guides.github.com/activities/forking/)
-
 
 ## Task
 Create a blog website that dynamically renders a list of sample blogs from different authors. The site should include, but is not limited to:
@@ -27,6 +25,8 @@ You may use any internet sources to aid your implementation. [React](https://rea
 
 ## Submitting Your Work (IMPORTANT)
 When you are finished, create a Pull Request in Github for the forked repository. Email the link to your Pull Request to nicole.chini@levvel.io **at least 24 hours before your technical interview**
+
+Please make sure your Pull Request is for your forked repo, NOT the original repo
 
 ## Example Interfaces
 ![Home Page Example](home-page-example.png)
