@@ -1,8 +1,9 @@
 # Levvel Technical Interview
 
 ## Project Setup
-- **Fork** the repository
-- Clone the forked repository and open the project locally
+- Fork the repository and clone the repository to your local machine.  Documentation on how to do this https://docs.github.com/en/get-started/quickstart/fork-a-repo
+- open the project locally
+- Create a branch using the naming convention **yourFirstName_yourLastName**. This is where you work should be saved.
 - To run the project run the following command in the project directory:
 `yarn start`
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -24,7 +25,7 @@ You should use this [JSON Placeholder API](https://jsonplaceholder.typicode.com/
 You may use any internet sources to aid your implementation. [React](https://reactjs.org/docs/getting-started.html) has great documentation if you get stuck/need help.
 
 ## Submitting Your Work (IMPORTANT)
-When you are finished, create a Pull Request in Github for the forked repository. Email the link to your Pull Request to nicole.chini@levvel.io **at least 24 hours before your technical interview**
+When you are finished, create a Pull Request in Github for the forked repository. This Pull Request should compare your created branch to the **main** branch. Email the link to your Pull Request to nicole.chini@levvel.io **at least 24 hours before your technical interview**
 
 Please make sure your Pull Request is for your forked repo, NOT the original repo
 
