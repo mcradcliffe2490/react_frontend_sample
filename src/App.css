@@ -9,13 +9,37 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.title{
+  font-size: medium;
+  font-style: italic;
+  text-decoration: underline;
+}
+.post{
+  border: thin solid #61dafb;
+  border-radius: 12px;
+  background-color: aliceblue;
+  width: fit-content;
+}
+.preview{
+  font-size: small;
+  font-weight: normal;
+  text-indent: 40px;
+}
+.home{
+  position:absolute;
+  right: 30px;
+  top: 30px;
+  width: 35px;
+  height: 35px;
+  background-color: white;
 }
 
 .App-link {
