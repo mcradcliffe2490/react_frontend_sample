@@ -1,9 +1,9 @@
 import './App.css';
 import home from './images/Home.png';
-import {Container, Row, Col} from "shards-react";
+import {Container, Row} from "shards-react";
 import React from 'react';
 import useFetch from "./useFetch";
-import {Link, Router} from "@reach/router";
+import {Link} from "@reach/router";
 
 const topPost = (posts) => {
     let highestViews = posts[0].views
@@ -16,68 +16,46 @@ const topPost = (posts) => {
     })
     return highestPost
 }
+
+const AuthorFormat = (props) => {
+    const authors = props.authors;
+    const authorsList = authors.map((author) => {
+        return(
+            <Row className="Blog">
+                <nav><Link
+                    to="/author-page"
+                    state={{userPost: author.posts}}
+                >
+                    {author.name}</Link></nav>
+                <Container className = "post">
+                    <h1 className="title">{topPost(author.posts).title}</h1>
+                    <h1 className="preview">{topPost(author.posts).preview}...(click author to see more)</h1>
+                </Container>
+                <Row className="separator"> </Row>
+            </Row>
+        )
+    })
+    return(authorsList)
+
+
+}
 export const Blogs = () => {
     const {data, loading, error} = useFetch("https://my-json-server.typicode.com/mcradcliffe2490/fake_blog_db/db")
     return(
-        <header>
+        <div>
+            {loading && <p>{loading}</p>}
+            {error && <p>{error}</p>}
             <Container>
                 <Row className="App-header">
                     BlogsForDays
-                    <img className="home" src={home}/>
+                    <Link to="/">
+                        <img className="home" src={home}/>
+                    </Link>
                 </Row>
-                <Row className="Blog">
-                    {loading && <p>{loading}</p>}
-                    {data && <nav><Link
-                        to="/author-page"
-                        state={data.authors[0].posts}
-                        >
-                        {data.authors[0].name}</Link></nav>}
-                    <Container className = "post">
-                        {data && <h1 className="title">{topPost(data.authors[0].posts).title}</h1>}
-                        {data && <h1 className="preview">{topPost(data.authors[0].posts).preview}...(click author to see more)</h1>}
-                    </Container>
-                    {error && <p>{error}</p>}
-                </Row>
-                <Row className="Blog">
-                    {loading && <p>{loading}</p>}
-                    {data && <nav><Link
-                        to="/author-page"
-                        state={data.authors[1].posts}
-                    >
-                        {data.authors[1].name}</Link></nav>}
-                    <Container className = "post">
-                        {data && <h1 className="title">{topPost(data.authors[1].posts).title}</h1>}
-                        {data && <h1 className="preview">{topPost(data.authors[1].posts).preview}...(click author to see more)</h1>}
-                    </Container>
-                    {error && <p>{error}</p>}
-                </Row>
-                <Row className="Blog">
-                    {loading && <p>{loading}</p>}
-                    {data && <nav><Link
-                        to="/author-page"
-                        state={data.authors[2].posts}
-                    >
-                        {data.authors[2].name}</Link></nav>}
-                    <Container className = "post">
-                        {data && <h1 className="title">{topPost(data.authors[2].posts).title}</h1>}
-                        {data && <h1 className="preview">{topPost(data.authors[2].posts).preview}...(click author to see more)</h1>}
-                    </Container>
-                    {error && <p>{error}</p>}
-                </Row>
-                <Row className="Blog">
-                    {loading && <p>{loading}</p>}
-                    {data && <nav><Link
-                        to="/author-page"
-                        state={data.authors[3].posts}
-                    >
-                        {data.authors[3].name}</Link></nav>}
-                    <Container className = "post">
-                        {data && <h1 className="title">{topPost(data.authors[3].posts).title}</h1>}
-                        {data && <h1 className="preview">{topPost(data.authors[3].posts).preview}...(click author to see more)</h1>}
-                    </Container>
-                    {error && <p>{error}</p>}
-                </Row>
+                {data && <AuthorFormat authors={data.authors}/>}
             </Container>
-        </header>
+
+        </div>
     );
 };
+

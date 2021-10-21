@@ -5,7 +5,7 @@ import {AuthorPage} from "./AuthorPage.js";
 
 export default function App() {
   return (
-    <div>
+    <div className="App">
         <Router>
             <Blogs path="/"/>
             <AuthorPage path="/author-page"/>
